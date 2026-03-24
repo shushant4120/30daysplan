@@ -63,6 +63,5 @@ public class CodingQuestions {
         System.out.println(sb.toString().equals(str1));
         System.out.println(sb.toString());
 
-
     }
 }
