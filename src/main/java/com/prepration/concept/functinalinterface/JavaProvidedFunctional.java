@@ -1,5 +1,6 @@
 package com.prepration.concept.functinalinterface;
 
+import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -10,7 +11,7 @@ public class JavaProvidedFunctional extends Thread  {
     public void run() {
         System.out.println("Thread is running...");
     }
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         Thread t= new JavaProvidedFunctional();
         try {
             Thread.sleep(5);
@@ -46,5 +47,12 @@ public class JavaProvidedFunctional extends Thread  {
         } finally {
            System.out.println("finally block executed");
         } 
+
+        Callable<Integer> c=()-> {
+            Thread.sleep(5000);
+            return 10+30;
+        };
+        Integer result = c.call();
+        System.out.println(result);
     }
 }
