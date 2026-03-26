@@ -1,6 +1,7 @@
 package com.prepration.concept.stream;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -21,5 +22,7 @@ public class TestAllStreamOperations {
         System.out.println("Department: " + entry.getKey());
         entry.getValue().forEach(emp -> System.out.println(" - " + emp.getName() + ", Salary: " + emp.getSalary()));
     });
+
+    employees.stream().sorted(Comparator.comparing(emp-> emp.getAge())).forEach(em-> System.out.println(em.getName() + " - " + em.getAge()));
     }
 }
