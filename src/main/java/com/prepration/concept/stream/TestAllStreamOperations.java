@@ -6,8 +6,13 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 public class TestAllStreamOperations {
     
+    // feild injection
+    @Autowired
+    private CodingStream codingStream;
     public static void main(String[] args) {
         // Create a list of employees
         List<Employe> employees = Arrays.asList(
