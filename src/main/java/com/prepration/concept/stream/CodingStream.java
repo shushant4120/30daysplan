@@ -19,6 +19,7 @@ public class CodingStream {
 
         List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 
+        numbers.stream().filter(x-> x > 4).toList();
         // Example: Filter even numbers and print them
        System.out.println(numbers.stream().filter(n-> n % 2 ==0).toList());
        System.out.println(numbers.stream().map(x -> x*x).sorted().toList());
