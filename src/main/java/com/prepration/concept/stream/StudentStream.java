@@ -15,5 +15,6 @@ public class StudentStream {
 
       List<String> subjectList = students.stream().filter(std-> std.getSubjects() !=null).flatMap(s-> s.getSubjects().stream()).collect(Collectors.toList());
       System.out.println(subjectList);
+      students.stream().filter(std-> std.getName().startsWith("A") || std.getName().startsWith("B")).collect(Collectors.toList());
     }
 }
