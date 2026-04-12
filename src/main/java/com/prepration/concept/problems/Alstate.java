@@ -23,7 +23,6 @@ public class Alstate {
         charCountMap.put(charArray[i], charCountMap.getOrDefault(charArray[i], 0)+1);
         charCountMap1.put(charArray[i], charCountMap1.getOrDefault(charArray[i], 0)+1);
 
-
        }
        System.out.println(charCountMap);
        System.out.println(charCountMap1);
