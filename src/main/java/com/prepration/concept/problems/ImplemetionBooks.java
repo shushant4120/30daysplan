@@ -27,7 +27,6 @@ public class ImplemetionBooks {
             System.out.println("Added in list created using Collectors.toList(): ");
 
       }
-     
 
       Map<String, Long>  re= bookList.stream().collect(Collectors.groupingBy(lst-> lst.getAuthor(), Collectors.counting()));
         System.out.println(re);

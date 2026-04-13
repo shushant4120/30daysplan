@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @RestController
 @RequestMapping("/users")
-public class UserController {
+public class UserControllers {
     
 
     @GetMapping("/userid/{id}")
