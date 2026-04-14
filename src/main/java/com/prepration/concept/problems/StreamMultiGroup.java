@@ -15,7 +15,7 @@ public class StreamMultiGroup {
 
         List<Books> bookList = Arrays.asList(book1, book2, book3, book4, book5);
         
-       System.out.println(bookList.stream().collect(Collectors.groupingBy(b->b.getAuthor(),Collectors.groupingBy(b->b.getGenre(), Collectors.counting()))));
-    
-}
+        Map<Object, Map<Object, Long>> result = bookList.stream().collect(Collectors.groupingBy(b->b.getAuthor(),Collectors.groupingBy(b->b.getGenre(), Collectors.counting())));
+        System.out.println(result);
+    }
 }
