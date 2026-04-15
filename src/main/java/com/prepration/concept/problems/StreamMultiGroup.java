@@ -16,6 +16,33 @@ public class StreamMultiGroup {
         List<Books> bookList = Arrays.asList(book1, book2, book3, book4, book5);
         
         Map<Object, Map<Object, Long>> result = bookList.stream().collect(Collectors.groupingBy(b->b.getAuthor(),Collectors.groupingBy(b->b.getGenre(), Collectors.counting())));
-        System.out.println(result);
+        //System.out.println(result);
+        String name = "abcdea";
+        String[] arr = {"cea", "bb", "ade", "abe"};
+
+char[] ch = name.toCharArray();
+int count=0;
+for(char c:ch){
+
+    for(String s:arr){
+       char[] sch = s.toCharArray();
+       for(char sc:sch){
+           if(c==sc){
+              
+            for(int i=sch.length-1;i>=0;i--){
+                if(c==sch[i]){
+                    count++;
+                    break;
+                }
+            }
+           }
+       }
+    }
+}
+System.out.println(count);
+
+
+       long re=  Arrays.stream(arr).filter(ar-> name.contains(ar)).count();
+       System.out.println(re);
     }
 }
