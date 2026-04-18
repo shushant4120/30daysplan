@@ -16,5 +16,10 @@ public class DuplicateArray {
       List<Integer> list2 = Arrays.asList(1, 2, 3, 5, 2, 3);
 
       list.stream().filter(list2::contains).toList().forEach(System.out::println);
+
+      String str = "hello world";
+      String st2= new String("hello world");
+    //   st2.intern();
+      System.out.println(str==st2.intern());
     }
 }
