@@ -16,5 +16,9 @@ public class PaymentMaster {
 
         PaymentMaster upiPayment = new PaymentMaster(new UpiPay());
         upiPayment.makePayment(200.0);
+        // SELECT Salary
+// FROM (SELECT Salary, Dense_Rank OVER  (Order by Salary DESC) as Rank
+// FROM employee) t
+// WHERE Rank= n;
     }
 }
