@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class PlayGround {
 
@@ -29,5 +30,10 @@ System.out.println(re);
                 .sorted(Map.Entry.<Integer, Long>comparingByKey().reversed()).findFirst()
                 .ifPresentOrElse(x -> System.out.println(x.getKey() + " appears " + x.getValue() + " times"),
                         () -> System.out.println("No repeated elements"));
-    }
+
+                        String st= "Shushant";
+
+                //IntStream.range(0,st.length()).mapToObj(i-> st.charAt(st.length()-1 -i)).map(x->x.toString()).forEach(System.out::print);
+   IntStream.range(0,st.length()).mapToObj(x-> st.charAt(st.length() -1 -x)).map(x-> x.toString()).forEach(System.out::print);
+        }
 }
