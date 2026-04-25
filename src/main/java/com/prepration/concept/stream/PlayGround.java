@@ -11,6 +11,10 @@ public class PlayGround {
     public static void main(String[] args) {
 
         List<Integer> list = List.of(1, 2, 3, 3, 4, 5, 8, 8, 9, 10);
+
+Integer rrrr=list.stream().distinct().collect(Collectors.maxBy(Comparator.comparing(x->x))).get();
+System.out.println("max number is : " + rrrr);
+
 Map<Object, Long> re= list.stream().collect(Collectors.groupingBy(x-> x, TreeMap::new, Collectors.counting()));
 System.out.println(re);
         int n = 2;

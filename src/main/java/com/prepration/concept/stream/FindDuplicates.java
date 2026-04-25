@@ -16,5 +16,7 @@ for(char c: str.toCharArray()){
     }
 
 map.entrySet().stream().forEach(x-> System.out.println(x.getKey() + " appears " + x.getValue() + " times"));
+
+
     }
 }
