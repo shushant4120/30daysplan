@@ -6,14 +6,13 @@ public class CompletableFeatureMethods {
     
    
     public static void main(String[] args) {
-
-        
         CompletableFuture.runAsync(()-> System.out.println("Hello Shushant"));
         CompletableFuture.runAsync(()-> System.out.println("Hello Shushant Kumar"));
         System.out.println("Hello Shushant Kumar Singh");
        CompletableFuture.supplyAsync(()-> {
         System.out.println("Count is : "+ 15);
 return 5+10;
+// System.out.println("Sum is : "+ (5+10));
        } );
        CompletableFuture.allOf(CompletableFuture.completedFuture("Hello Shushant"), CompletableFuture.completedFuture("Hello Shushant Kumar"), CompletableFuture.completedFuture("Hello Shushant Kumar Singh")).thenRun(()-> System.out.println("All tasks completed"));
      CompletableFuture.anyOf(CompletableFuture.completedFuture("Hello Shushant"), CompletableFuture.completedFuture("Hello Shushant Kumar"), CompletableFuture.completedFuture("Hello Shushant Kumar Singh")).thenAccept(result -> System.out.println("First completed task: " + result));
