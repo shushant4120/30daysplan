@@ -54,21 +54,22 @@ result.add(data);
       return list;
         
     }
-    public List<UserData> updateUserPatchCall(int id, String name) {
+  public UserData updateUserPatchCall(int id, String name) {
 
     List<UserData> list = setUserData();
 
     for (UserData data : list) {
         if (data.getId() == id) {
 
-            if (name != null) {
-                System.out.println(name);
+            if (name != null && !name.trim().isEmpty()) {
                 data.setName(name);
             }
-            
+
+            return data; // Return updated user
         }
     }
-    return list;
+
+    return null; // User not found
 }
 public String deleteUserInfo(int id) {
     List<UserData> list = setUserData();

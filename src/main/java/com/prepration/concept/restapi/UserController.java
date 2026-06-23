@@ -5,6 +5,8 @@ import java.util.Map;
 
 import javax.swing.text.Document;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
@@ -58,12 +60,22 @@ public class UserController {
         return userService.updateUserPutCall(id,entity);
     }
     
-    @PatchMapping("useruppatch/{id}")
-    public List<UserData> patchUserData(@PathVariable int id,  @RequestBody Map<String, Object> update) {
-        //TODO: process PATCH request
-        System.out.println("Received PATCH request for user with id: " + id);
-        return userService.updateUserPatchCall(id,update.get("name").toString());
+   @PatchMapping("/useruppatch/{id}")
+public ResponseEntity<?> patchUserData(
+        @PathVariable int id,
+        @RequestBody Map<String, Object> update) {
+
+    UserData user = userService.updateUserPatchCall(
+            id,
+            (String) update.get("name"));
+
+    if (user == null) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                .body("User not found");
     }
+
+    return ResponseEntity.ok(user);
+}
     @DeleteMapping("/deleteuser")
     public String deleteUser(@RequestParam int id) {
         //TODO: process DELETE request
